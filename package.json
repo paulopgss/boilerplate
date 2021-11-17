@@ -9,7 +9,9 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest",
+    "teste:watch": "yarn test --watch"
   },
   "dependencies": {
     "next": "12.0.4",
@@ -17,6 +19,10 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.16.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
@@ -28,6 +34,7 @@
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
+    "jest": "^27.3.1",
     "lint-staged": ">=10",
     "pinst": "^2.1.6",
     "prettier": "^2.4.1",
@@ -35,7 +42,8 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "yarn lint --fix"
+      "yarn lint --fix",
+      "yarn test --bail"
     ]
   }
 }
