@@ -20,8 +20,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Setup Node
         run: actions/setup-node@v1
-        with:
-          node-version: 14.x
 
       # Runs a set of commands using the runners shell
       - name: Install dependencies
