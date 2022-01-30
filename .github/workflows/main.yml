@@ -7,16 +7,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Respoitory
+        uses: actions/checkout@v2
 
       - name: Setup Node
-      - uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - name: Install dependencies
+      - name: Install yarn
         run: npm i -g yarn
-      - run: yarn install
+
+      - name: Install dependencies
+        run: yarn install
 
       - name: Linting
         run: yarn lint
