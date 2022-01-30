@@ -27,5 +27,5 @@ jobs:
       - name: Teste
         run: yarn test
 
-      - name: Linting
+      - name: Build
         run: yarn build
