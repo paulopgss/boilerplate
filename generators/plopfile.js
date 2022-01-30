@@ -1,19 +1,18 @@
-export default function (plop) {
-  // controller generator
+module.exports = (plop) => {
   plop.setGenerator('component', {
-    description: 'application component logic',
+    description: 'Create a component',
     prompts: [
       {
         type: 'input',
         name: 'name',
-        message: 'component name please'
+        message: 'What is your component name?'
       }
     ],
     actions: [
       {
         type: 'add',
         path: '../src/components/{{pascalCase name}}/index.tsx',
-        templateFile: 'templates/index.tsx.hbs'
+        templateFile: 'templates/Component.tsx.hbs'
       },
       {
         type: 'add',
